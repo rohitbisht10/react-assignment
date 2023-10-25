@@ -23,7 +23,7 @@ const FormComponent = ({ onSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit({ latitude, longitude, selectedType, selectedValue });
-    setSelectedValue(selectedType); // Add this line to set selectedValue when form is submitted
+    setSelectedValue(selectedType);
   };
 
   return (
