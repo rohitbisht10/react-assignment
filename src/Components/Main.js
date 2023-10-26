@@ -19,11 +19,9 @@ const Main = () => {
             <MapComponent
               latitude={formData.latitude}
               longitude={formData.longitude}
-              selectedValue={formData.selectedValue}
             />
             <ChartComponent
               selectedType={formData.selectedType}
-              selectedValue={formData.selectedValue}
             />
           </>
         )}

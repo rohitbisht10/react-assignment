@@ -6,15 +6,10 @@ import "leaflet/dist/leaflet.css";
 const MapComponent = ({ latitude, longitude }) => {
   const [mapKey, setMapKey] = useState(Date.now());
   const [mapCenter, setMapCenter] = useState([0, 0]);
-  const [markerPosition, setMarkerPosition] = useState([0, 0]);
 
   useEffect(() => {
-    const lat = parseFloat(latitude);
-    const lng = parseFloat(longitude);
-
-    if (!isNaN(lat) && !isNaN(lng)) {
-      setMapCenter([lat, lng]);
-      setMarkerPosition([lat, lng]);
+    if (latitude && longitude) {
+      setMapCenter([latitude, longitude]);
     }
   }, [latitude, longitude]);
 
@@ -42,7 +37,7 @@ const MapComponent = ({ latitude, longitude }) => {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
           {latitude && longitude && (
-            <Marker position={markerPosition} icon={customIcon}></Marker>
+            <Marker position={mapCenter} icon={customIcon}></Marker>
           )}
         </MapContainer>
       </div>

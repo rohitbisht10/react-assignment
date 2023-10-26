@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 
 const FormComponent = ({ onSubmit }) => {
-  const [latitude, setLatitude] = useState("");
-  const [longitude, setLongitude] = useState("");
+  const [latitude, setLatitude] = useState('');
+  const [longitude, setLongitude] = useState('');
   const [selectedType, setSelectedType] = useState("");
-  const [selectedValue, setSelectedValue] = useState("");
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -17,13 +16,11 @@ const FormComponent = ({ onSubmit }) => {
 
   const handleTypeChange = (e) => {
     setSelectedType(e.target.value);
-    setSelectedValue("");
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit({ latitude, longitude, selectedType, selectedValue });
-    setSelectedValue(selectedType);
+    onSubmit({ latitude, longitude, selectedType });
   };
 
   return (
