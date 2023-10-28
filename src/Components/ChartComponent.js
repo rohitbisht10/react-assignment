@@ -9,7 +9,7 @@ const ChartComponent = ({ selectedType }) => {
       let barChartOption = null;
       let pieChartOption = null;
 
-      const value = `${selectedType} Value`; 
+      const value = `${selectedType} Value`;
       barChartOption = {
         xAxis: {
           type: "category",
@@ -20,9 +20,9 @@ const ChartComponent = ({ selectedType }) => {
         },
         series: [
           {
-            data: [100],
+            data: [100, 120, 150],
             type: "bar",
-            barWidth: 30, 
+            barWidth: 30,
           },
         ],
       };
@@ -30,7 +30,6 @@ const ChartComponent = ({ selectedType }) => {
       pieChartOption = {
         tooltip: {
           trigger: "item",
-          formatter: "{a} <br/>{b}: {c} ({d}%)",
         },
         series: [
           {
@@ -52,9 +51,7 @@ const ChartComponent = ({ selectedType }) => {
             labelLine: {
               show: false,
             },
-            data: [
-              { value: 120, name: value }, 
-            ],
+            data: [{ value: 120, name: value }],
           },
         ],
       };
@@ -65,7 +62,7 @@ const ChartComponent = ({ selectedType }) => {
     const options = generateChartData();
     setChartOption(options);
   }, [selectedType]);
-
+  
   return (
     <div className="col-lg-6">
       <div className="d-flex justify-content-between">

@@ -3,7 +3,8 @@ import React, { useState } from "react";
 const FormComponent = ({ onSubmit }) => {
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
-  const [selectedType, setSelectedType] = useState("");
+  const [selectedType, setSelectedType] = useState("select");
+
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
